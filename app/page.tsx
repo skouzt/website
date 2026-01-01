@@ -198,7 +198,7 @@ export default function Page() {
             <Link href="/privacy" className="hover:text-gray-900">Privacy</Link>
             <Link href="/refund" className="hover:text-gray-900">Refund</Link>
           </div>
-          <p>© 2024 Aletheia</p>
+          <p>© 2025 Aletheia</p>
         </div>
       </footer>
     </div>
