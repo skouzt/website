@@ -1,206 +1,341 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import SiteFooter from "@/app/components/site-footer";
+import { siteContent } from "@/app/lib/site-content";
+
+const featureCards = [
+  {
+    title: "Voice-first reflection",
+    description:
+      "Talk naturally when your thoughts are messy. Aletheia helps you slow down and sort what you feel.",
+  },
+  {
+    title: "Intentional sessions",
+    description:
+      "Designed for short check-ins, not endless scrolling or engagement loops.",
+  },
+  {
+    title: "Gentle structure",
+    description:
+      "Prompts are calm and focused so your inner monologue becomes clearer and more usable.",
+  },
+  {
+    title: "Private by default",
+    description:
+      "Built around sensitive conversations with careful wording and clear limits.",
+  },
+];
+
+const steps = [
+  {
+    label: "Step 1",
+    title: "Start speaking",
+    description: "Open a session and talk as if you are thinking out loud.",
+  },
+  {
+    label: "Step 2",
+    title: "Get reflective prompts",
+    description: "Aletheia responds with calm prompts to help you organize thoughts.",
+  },
+  {
+    label: "Step 3",
+    title: "Pause and continue your day",
+    description: "Close when it feels complete. The product is designed to be put down.",
+  },
+];
+
+const audienceCards = [
+  {
+    title: "People who overthink at night",
+    description:
+      "Use short voice sessions to clear mental loops before they spiral.",
+  },
+  {
+    title: "Busy professionals",
+    description:
+      "Process stress in minutes between meetings instead of carrying it all day.",
+  },
+  {
+    title: "Anyone building emotional vocabulary",
+    description:
+      "Get a calmer way to name feelings and move toward clarity.",
+  },
+];
+
+const principles = [
+  {
+    title: "No engagement traps",
+    description:
+      "No streaks, no addictive mechanics, and no pressure to stay in the app.",
+  },
+  {
+    title: "Boundaries are a feature",
+    description:
+      "Limits exist to keep reflection healthy and integrated with real life.",
+  },
+  {
+    title: "Human care still matters",
+    description:
+      "Aletheia complements your life. It does not replace therapy or human support.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Is this therapy?",
+    answer:
+      "No. Aletheia is a reflection tool for emotional clarity, not clinical treatment.",
+  },
+  {
+    question: "How long should one session be?",
+    answer:
+      "Most people use it for short check-ins of a few minutes when they need perspective.",
+  },
+  {
+    question: "Can I use it in a crisis?",
+    answer:
+      "No. If you are in immediate danger or crisis, contact emergency services right away.",
+  },
+  {
+    question: "Where can I view subscription options?",
+    answer:
+      "Open the pricing page to compare plans and continue to the subscription checkout.",
+  },
+];
+
 export default function Page() {
   return (
-    <div className="min-h-screen w-full bg-white text-gray-900 font-sans flex flex-col">
-      <main className="flex-1 max-w-4xl mx-auto px-6 py-12 space-y-20">
+    <div className="flex min-h-screen flex-col text-[#1b2430]">
+      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-16 px-6 pb-16 pt-10 md:pt-14">
+        <section className="reveal-down relative overflow-hidden rounded-[2rem] border border-[#d4dbe8] bg-[#fffdf7] p-6 shadow-[0_18px_50px_rgba(23,38,65,0.09)] md:p-10">
+          <div className="pointer-events-none absolute -left-24 top-10 h-56 w-56 rounded-full bg-[#ffefc8] blur-3xl" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#dceeff] blur-3xl" />
 
-        {/* HERO */}
-        <section className="space-y-6">
-          <div className="mb-4">
-            <Image
-              src="/illustrations/fox.svg"
-              alt="Calm animal illustration"
-              width={48}
-              height={48}
-              priority
-            />
-          </div>
+          <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div className="space-y-6">
+              <p className="inline-flex rounded-full border border-[#ccd5e4] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#5f6f83]">
+                Aletheia
+              </p>
 
-          <h1 className="text-5xl font-bold leading-tight">
-            Aletheia — a calm place to think out loud
-          </h1>
+              <h1 className="max-w-2xl text-4xl leading-tight text-[#152238] md:text-6xl">
+                A calmer way to hear your own thoughts.
+              </h1>
 
-          <h2 className="text-xl text-gray-600 max-w-2xl">
-            A voice-first AI companion for reflection and emotional clarity.
-            Not therapy. Not crisis support.
-          </h2>
+              <p className="max-w-2xl text-lg leading-relaxed text-[#425268] md:text-xl">
+                A voice-first companion for emotional clarity and reflection.
+                Talk naturally, get grounded prompts, and stop when it feels complete.
+              </p>
 
-          <p className="text-lg leading-relaxed max-w-2xl">
-            Aletheia helps you slow down and hear your own thoughts more clearly.
-            You speak naturally. It responds thoughtfully. You pause when it feels right.
-          </p>
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <a
+                  href={siteContent.links.playStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-xl bg-[#1967e8] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1356c2]"
+                >
+                  Get it on Google Play
+                </a>
 
-          <div className="flex gap-4 pt-4">
-            <button className="px-6 py-3 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800">
-              Try Aletheia
-            </button>
+                <Link
+                  href="/philosophy"
+                  className="inline-flex items-center rounded-xl border border-[#b9c4d8] bg-white px-6 py-3 text-sm font-semibold text-[#23324a] transition-colors hover:bg-[#eef3fb]"
+                >
+                  Read philosophy
+                </Link>
+              </div>
 
-            <Link
-              href="/philosophy"
-              className="px-6 py-3 text-gray-600 hover:text-gray-900 rounded-lg text-sm"
-            >
-              Read the philosophy
-            </Link>
+              <p className="max-w-2xl rounded-xl border border-[#d8d0bf] bg-[#fff4dd] px-4 py-3 text-sm leading-relaxed text-[#425268]">
+                {siteContent.disclaimers.scope}
+              </p>
+            </div>
+
+            <div className="relative min-h-[280px] rounded-3xl border border-[#d4dbe8] bg-gradient-to-br from-[#f6fbff] via-white to-[#fff4de] p-5 md:min-h-[340px]">
+              <Image
+                src="/illustrations/owl.svg"
+                alt="Owl illustration"
+                width={240}
+                height={240}
+                className="illustration-float-slow absolute -right-8 -top-8 w-[180px] md:w-[240px]"
+                priority
+              />
+              <Image
+                src="/illustrations/fox.svg"
+                alt="Fox illustration"
+                width={220}
+                height={220}
+                className="illustration-float-fast absolute -bottom-4 -left-2 w-[150px] md:w-[220px]"
+                priority
+              />
+              <div className="absolute bottom-4 right-4 max-w-[210px] rounded-2xl border border-[#d4dbe8] bg-white/90 p-3 text-sm text-[#445367] backdrop-blur">
+                Voice reflection, not diagnosis. Intentional use, not addictive use.
+              </div>
+            </div>
           </div>
         </section>
 
-        <hr className="border-t border-gray-200" />
+        <section className="reveal-down reveal-delay-1 grid gap-4 md:grid-cols-2">
+          <article className="rounded-2xl border border-[#d5dce8] bg-white p-6">
+            <h2 className="text-2xl text-[#18263b]">What Aletheia is for</h2>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[#4b5b70] md:text-base">
+              <li>• Talking through tangled thoughts</li>
+              <li>• Short emotional clarity check-ins</li>
+              <li>• Reflective prompts without clinical framing</li>
+            </ul>
+          </article>
 
-        {/* WHAT THIS APP IS FOR */}
-        <section className="space-y-6">
-          <h3 className="text-2xl font-semibold">What this app is for</h3>
+          <article className="rounded-2xl border border-[#d8d1c2] bg-[#fff5e2] p-6">
+            <h2 className="text-2xl text-[#18263b]">What Aletheia is not</h2>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[#4b5b70] md:text-base">
+              <li>• Not therapy or medical advice</li>
+              <li>• Not crisis support</li>
+              <li>• Not a replacement for human care</li>
+            </ul>
+            <p className="mt-3 text-sm text-[#4b5b70]">{siteContent.disclaimers.crisis}</p>
+          </article>
+        </section>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            {[
-              {
-                title: "Speaking instead of typing",
-                desc: "When thoughts feel tangled and you need to get them out verbally.",
-              },
-              {
-                title: "Short, intentional conversations",
-                desc: "Helping you find the right words for your feelings in minutes, not hours.",
-              },
-              {
-                title: "Gentle reflection without diagnosis",
-                desc: "A mirror for your thoughts, not a doctor analyzing your mind.",
-              },
-              {
-                title: "Organizing what you feel",
-                desc: "Structure your internal monologue into something coherent and actionable.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="p-5 rounded-lg border border-gray-200 bg-white"
+        <section className="space-y-6 reveal-down reveal-delay-2">
+          <h2 className="text-3xl text-[#152238] md:text-4xl">Why people use it</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {featureCards.map((card, index) => (
+              <article
+                key={card.title}
+                className="reveal-down rounded-2xl border border-[#d5dce8] bg-[#fbfdff] p-6 shadow-[0_8px_24px_rgba(24,38,60,0.05)]"
+                style={{ animationDelay: `${220 + index * 90}ms` }}
               >
-                <p className="text-[17px] leading-relaxed">
-                  <strong className="block mb-2">{item.title}</strong>
-                  <span className="text-gray-600">{item.desc}</span>
+                <h3 className="text-xl text-[#1a2b44]">{card.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#4d5d72] md:text-base">
+                  {card.description}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
         </section>
 
-        {/* WHAT THIS APP IS NOT */}
-        <section className="space-y-4">
-          <h3 className="text-2xl font-bold">What this app is not</h3>
-
-          <div className="bg-gray-100 p-7 rounded-lg border-l-4 border-gray-400">
-            <ul className="space-y-3">
-              <li className="text-[17px] font-medium">☐ Not therapy or medical advice</li>
-              <li className="text-[17px] font-medium">☐ Not a replacement for human connection</li>
-              <li className="text-[17px] font-medium">☐ Not for emergencies or crisis situations</li>
-              <li className="text-[17px] font-medium">☐ Not designed for endless conversations</li>
-            </ul>
-
-            <p className="mt-6 pt-5 border-t border-gray-300 text-[15px] italic text-gray-600">
-              Please seek professional help if you are in crisis. Aletheia is a tool
-              for self-reflection, not a mental health service.
-            </p>
-          </div>
-        </section>
-
-        <hr className="border-t border-gray-200" />
-
-        {/* HOW IT WORKS */}
-        <section className="space-y-10">
-          <h3 className="text-2xl font-semibold">How it works</h3>
-
-          {[
-            {
-              step: "1",
-              title: "You speak naturally",
-              desc: "No typing required. Just talk as if you were thinking out loud.",
-            },
-            {
-              step: "2",
-              title: "Aletheia responds with calm reflection",
-              desc: "It reflects your thoughts back with structure and clarity.",
-            },
-            {
-              step: "3",
-              title: "You stop when it feels complete",
-              desc: "No streaks. No engagement loops. Use it and leave.",
-            },
-          ].map((item) => (
-            <div key={item.step} className="flex gap-6">
-              <span className="text-4xl font-mono text-gray-400 font-bold">
-                {item.step}
-              </span>
-              <div>
-                <strong className="text-lg block mb-2">{item.title}</strong>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-              </div>
-            </div>
-          ))}
-        </section>
-
-        {/* LIMITS */}
-        <section>
-          <div className="p-6 bg-gray-50 rounded-lg border-l-4 border-gray-300">
-            <h3 className="text-lg font-bold mb-2">
-              Designed with limits, on purpose
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              We built Aletheia to be put down. Daily caps, gentle reminders,
-              and no algorithms optimizing for your time.
-            </p>
-          </div>
-        </section>
-
-        <hr className="border-t border-gray-200" />
-
-        {/* PRICING PREVIEW */}
-        <section className="space-y-8">
-          <h3 className="text-2xl font-semibold">Pricing</h3>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-lg border border-gray-200 bg-white">
-              <h4 className="font-bold text-lg">Guided Plan</h4>
-              <p className="text-3xl font-bold mt-2">
-                $15 <span className="text-sm text-gray-500">/month</span>
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-gray-600">
-                <li>✓ Up to 1 hour per day</li>
-                <li>✓ Designed for intentional use</li>
-              </ul>
-              <Link
-                href="/pricing"
-                className="mt-6 inline-block w-full py-3 bg-gray-900 text-white rounded-lg text-sm text-center hover:bg-gray-800"
+        <section className="rounded-3xl border border-[#d4dbe8] bg-[#eef6ff] p-6 md:p-8 reveal-down reveal-delay-3">
+          <h2 className="text-3xl text-[#152238] md:text-4xl">How it works</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {steps.map((step, index) => (
+              <article
+                key={step.label}
+                className="reveal-down rounded-2xl border border-[#c7d4ea] bg-white p-5"
+                style={{ animationDelay: `${320 + index * 100}ms` }}
               >
-                View pricing
-              </Link>
-            </div>
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#5f6f83]">
+                  {step.label}
+                </p>
+                <h3 className="mt-2 text-xl text-[#1a2b44]">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#4d5d72] md:text-base">
+                  {step.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-            <div className="p-6 rounded-lg border border-gray-200 bg-gray-50">
-              <h4 className="font-bold text-lg text-gray-400">Extended Plan</h4>
-              <p className="text-3xl font-bold mt-2">
-                $50 <span className="text-sm text-gray-500">/month</span>
-              </p>
-              <p className="mt-4 text-sm text-gray-500 italic">
-                Priced intentionally to discourage overuse
-              </p>
-            </div>
+        <section className="reveal-down reveal-delay-4 space-y-6">
+          <h2 className="text-3xl text-[#152238] md:text-4xl">Who this is built for</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {audienceCards.map((card, index) => (
+              <article
+                key={card.title}
+                className="reveal-down rounded-2xl border border-[#d5dce8] bg-white p-6"
+                style={{ animationDelay: `${420 + index * 90}ms` }}
+              >
+                <h3 className="text-xl text-[#1a2b44]">{card.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#4d5d72] md:text-base">
+                  {card.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="reveal-down reveal-delay-5 rounded-3xl border border-[#d5dce8] bg-white p-6 md:p-8">
+          <h2 className="text-3xl text-[#152238]">Design principles</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            {principles.map((item, index) => (
+              <article
+                key={item.title}
+                className="reveal-down rounded-2xl border border-[#d8e0ec] bg-[#fcfdff] p-5"
+                style={{ animationDelay: `${500 + index * 100}ms` }}
+              >
+                <h3 className="text-xl text-[#1a2b44]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#4d5d72] md:text-base">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="reveal-down reveal-delay-5 rounded-3xl border border-[#d5dce8] bg-white p-6 md:p-8">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <h2 className="text-3xl text-[#152238]">Pricing preview</h2>
+            <Link href="/pricing" className="text-sm font-semibold text-[#1b61d8] hover:underline">
+              Full pricing details
+            </Link>
+          </div>
+
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            <article className="rounded-2xl border border-[#d5dce8] bg-[#fbfdff] p-5">
+              <h3 className="text-xl text-[#1a2b44]">Guided</h3>
+              <p className="mt-2 text-3xl font-semibold text-[#122036]">$15/month</p>
+              <p className="mt-2 text-sm text-[#4d5d72]">Up to 1 hour/day for intentional reflection.</p>
+            </article>
+
+            <article className="rounded-2xl border border-[#d8d1c2] bg-[#fff6e6] p-5">
+              <h3 className="text-xl text-[#1a2b44]">Extended</h3>
+              <p className="mt-2 text-3xl font-semibold text-[#122036]">$50/month</p>
+              <p className="mt-2 text-sm text-[#4d5d72]">Priced to discourage overuse and dependency.</p>
+            </article>
+          </div>
+        </section>
+
+        <section className="reveal-down reveal-delay-5 rounded-3xl border border-[#d5dce8] bg-[#eef6ff] p-6 md:p-8">
+          <h2 className="text-3xl text-[#152238]">Common questions</h2>
+          <div className="mt-5 space-y-3">
+            {faqs.map((faq, index) => (
+              <article
+                key={faq.question}
+                className="reveal-down rounded-xl border border-[#cad7ea] bg-white p-4"
+                style={{ animationDelay: `${620 + index * 90}ms` }}
+              >
+                <h3 className="text-lg text-[#1a2b44]">{faq.question}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-[#4d5d72] md:text-base">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="reveal-down reveal-delay-5 rounded-[2rem] border border-[#d4dbe8] bg-[#172a44] p-6 text-white md:p-10">
+          <h2 className="text-3xl md:text-4xl">Ready for your first check-in?</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#d4dfef] md:text-base">
+            Download Aletheia on Google Play and start with a short, calm voice reflection.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <a
+              href={siteContent.links.playStore}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#172a44] transition-colors hover:bg-[#eaf0f8]"
+            >
+              Open Play Store
+            </a>
+            <a
+              href={siteContent.links.subscription}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-xl border border-[#8ca5cc] bg-transparent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#223857]"
+            >
+              View Subscription
+            </a>
           </div>
         </section>
       </main>
 
-      {/* FOOTER — ONLY NAVIGATION */}
-      <footer className="border-t border-gray-200 py-10">
-        <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between gap-6 text-sm text-gray-600">
-          <div className="flex flex-wrap gap-6">
-            <Link href="/pricing" className="hover:text-gray-900">Pricing</Link>
-            <Link href="/philosophy" className="hover:text-gray-900">Philosophy</Link>
-            <Link href="/term" className="hover:text-gray-900">Terms</Link>
-            <Link href="/privacy" className="hover:text-gray-900">Privacy</Link>
-            <Link href="/refund" className="hover:text-gray-900">Refund</Link>
-          </div>
-          <p>© 2024 Aletheia</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
