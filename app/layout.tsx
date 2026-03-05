@@ -1,21 +1,22 @@
+import type { Metadata } from "next";
+
+import { siteContent } from "@/app/lib/site-content";
+
 import "./globals.css";
 
-export const metadata = {
-  title: "Aletheia — A calm place to think out loud",
-  description:
-    "A voice-first AI companion for reflection and emotional clarity.",
+export const metadata: Metadata = {
+  title: `${siteContent.brandName} — ${siteContent.playStoreTitle}`,
+  description: siteContent.playStoreShortDescription,
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" className="light">
-      <body className="bg-background-light text-text-main font-display antialiased">
-        {children}
-      </body>
+    <html lang="en">
+      <body className="font-body text-[var(--text-main)] antialiased">{children}</body>
     </html>
   );
 }
