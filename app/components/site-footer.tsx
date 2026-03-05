@@ -6,7 +6,7 @@ const footerLinks = [
   { label: "Home", href: "/" },
   { label: "Pricing", href: siteContent.links.pricing },
   { label: "Philosophy", href: siteContent.links.philosophy },
-  { label: "Terms", href: siteContent.links.terms },
+  { label: "Terms", href: "/terms" },
   { label: "Privacy", href: siteContent.links.privacy },
   { label: "Refund", href: siteContent.links.refund },
 ];

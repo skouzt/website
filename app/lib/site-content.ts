@@ -80,7 +80,7 @@ export const siteContent: SiteContent = {
     subscription: SUBSCRIPTION_URL,
     philosophy: "/philosophy",
     pricing: "/pricing",
-    terms: "/term",
+    terms: "/terms",
     privacy: "/privacy",
     refund: "/refund",
   },
