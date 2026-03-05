@@ -2,9 +2,9 @@ import SiteFooter from "@/app/components/site-footer";
 import { siteContent } from "@/app/lib/site-content";
 
 const refundPrinciples = [
-  "Eligibility depends on plan type, purchase channel, and account status.",
-  "Platform purchases may follow Google Play billing rules where applicable.",
-  "Requests are reviewed against the active policy at the time of purchase.",
+  "Every purchase includes a minimum 14-day refund window.",
+  "Any request submitted within 14 calendar days of purchase is approved.",
+  "No qualifiers, exceptions, or special-case restrictions apply to this minimum window.",
 ];
 
 export default function RefundPolicyPage() {
@@ -32,9 +32,9 @@ export default function RefundPolicyPage() {
         </section>
 
         <section className="rounded-2xl border border-[#d8ddea] bg-white p-6">
-          <h2 className="text-2xl text-[#1f2f45]">Refund window placeholder</h2>
+          <h2 className="text-2xl text-[#1f2f45]">Minimum refund window</h2>
           <p className="mt-3 text-sm leading-relaxed text-[#4a596c] md:text-base">
-            Active eligibility window: {siteContent.placeholders.refundWindow}
+            We provide an unconditional minimum 14-day refund window for all purchases.
           </p>
           <ul className="mt-4 space-y-2 text-sm leading-relaxed text-[#4a596c] md:text-base">
             {refundPrinciples.map((principle) => (
@@ -46,10 +46,7 @@ export default function RefundPolicyPage() {
         <section className="rounded-2xl border border-[#d5dce8] bg-[#f6f9ff] p-6">
           <h2 className="text-2xl text-[#1f2f45]">How to request a refund</h2>
           <p className="mt-3 text-sm leading-relaxed text-[#4a596c] md:text-base">
-            Email {siteContent.placeholders.supportEmail} with your purchase identifier and reason.
-          </p>
-          <p className="mt-2 text-sm leading-relaxed text-[#4a596c] md:text-base">
-            For platform-billed subscriptions, follow the relevant app store process first.
+            Email {siteContent.placeholders.supportEmail} with your purchase identifier, and we will process the refund.
           </p>
         </section>
       </main>

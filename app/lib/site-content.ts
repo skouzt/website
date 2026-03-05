@@ -46,7 +46,7 @@ export interface SiteContent {
 }
 
 export const legalPolicyPlaceholders: LegalPolicyPlaceholders = {
-  supportEmail: "support@aletheia.app",
+  supportEmail: "support@aletheia-ai.space",
   privacyEmail: "privacy@aletheia.app",
   refundWindow:
     "7-day refund window for first-time subscriptions. Subscriptions are processed through Gumroad and follow Gumroad billing and refund terms.",
